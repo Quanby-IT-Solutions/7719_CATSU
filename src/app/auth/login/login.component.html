@@ -1,0 +1,51 @@
+<!-- src/app/auth/login/login.component.html -->
+<!-- Main Wrapper -->
+<div>
+  <!-- Login Banner -->
+  <!-- <owl-carousel-o [options]="welcomeLoginOwlOptions">
+    <ng-template carouselSlide *ngFor="let slide of welcomeLogin">
+      <img [src]="slide.img" alt="Logo">
+      <h2>{{slide.content1}}<br>{{slide.content2}}</h2>
+      <p>{{slide.paragraph}}</p>
+    </ng-template>
+  </owl-carousel-o> -->
+  <!-- /Login Banner -->
+
+  <!-- Login -->
+  <!-- <img src="assets/img/logo.svg" alt="Logo"> -->
+  <a [routerLink]="routes.home">Back to Home</a>
+  <h1>Sign into Your Account</h1>
+  <form (ngSubmit)="login()">
+    <label for="email">Email</label>
+    <input type="email" placeholder="Enter your email address" [(ngModel)]="email" name="email" required>
+
+    <label for="password">Password</label>
+    <div>
+      <input [type]="password" placeholder="Enter your password" [(ngModel)]="passwordInput" name="password" required>
+      <i (click)="togglePasswordVisibility()" tabindex="1" (keydown.enter)="togglePasswordVisibility()"
+        (keydown.space)="togglePasswordVisibility()">
+        {{ show ? 'Show' : 'Hide' }}
+      </i>
+    </div>
+
+    <a [routerLink]="routes.forgot_password">Forgot Password?</a>
+    <label>
+      Remember me
+      <input type="checkbox">
+    </label>
+
+    <button type="submit">Sign In</button>
+  </form>
+  <div>
+    <a href="javascript:void(0)">Or sign in with</a>
+    <div>
+      <ul>
+        <li><a href="javascript:void(0)"><img src="assets/img/net-icon-01.png" alt="Logo"> Sign In using Google</a></li>
+        <li><a href="javascript:void(0)"><img src="assets/img/net-icon-02.png" alt="Logo">Sign In using Facebook</a>
+        </li>
+      </ul>
+    </div>
+    <p>New User? <a [routerLink]="routes.register">Create an Account</a></p>
+  </div>
+  <!-- /Login -->
+</div>
